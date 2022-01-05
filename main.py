@@ -3,7 +3,7 @@ from datetime import datetime
 
 def init():
     #init a new database to store expense
-    connection = db.connect("ExpenseTracker\Maindb.db")
+    connection = db.connect("Maindb.db")
     cur = connection.cursor()
     sql = '''
     create table if not exists expenses (
@@ -18,7 +18,7 @@ def init():
 
 def log(amount, category, message=""):
     date = str(datetime.now())
-    connection = db.connect("ExpenseTracker\Maindb.db")
+    connection = db.connect("Maindb.db")
     cur = connection.cursor()
     sql = '''
     insert into expenses values (
@@ -32,7 +32,7 @@ def log(amount, category, message=""):
     connection.commit()
 
 def view(category=None):
-    connection = db.connect("ExpenseTracker\Maindb.db")
+    connection = db.connect("Maindb.db")
     cur = connection.cursor()
     if category:
         sql = '''

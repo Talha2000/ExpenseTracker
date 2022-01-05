@@ -7,6 +7,7 @@ class ExpenseApp(tk.Frame):
         super().__init__(master)
         self.master = master
         self.pack()
+        main.init()
         self.create_widgets()
 
     def create_widgets(self):
@@ -26,7 +27,7 @@ class ExpenseApp(tk.Frame):
         print(main.view())
     
     def log(self):
-        amount, category = input("Enter the amount and category").split(",")
+        amount, category = input("Enter the amount and category: ").split(",")
         print(main.log(amount,category))
 
     # def run_expense(self, tk):
